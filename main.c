@@ -1,8 +1,7 @@
 #include <stdio.h>
-#include "stdlib.h"
-#include "string.h"
-
-
+#include <stdlib.h>
+#include <string.h>
+#include "Source.c"
 
 
 typedef struct S_User
@@ -11,7 +10,6 @@ typedef struct S_User
     char code[8];    // user code
     int permissionStatus;   //user status
     struct S_User *next;
-
 
     //start time
 
@@ -47,6 +45,7 @@ User *AddUser(User *previous) {
     if(previous != NULL) {
         previous->next = newUser;
     }
+
     return newUser;
 }
 
@@ -60,7 +59,22 @@ void readAccess();
 
 
 
-int main() {
+int main(int argc, char *argv[]) {
+
+    int day, month, year, hours, mins;
+
+    if (argc != 2)
+    {
+        printf("Valid Arguments\n");
+        printf("---------------\n");
+        printf("To enter new submits into the Access System: program.exe requests.txt\n");
+        //return;
+    }
+
+    readAccess(ACCESS_PATH);
+
+    getDateTime(&day,&month,&year,&hours,&mins);
+    printf("Current computer time: %02d/%02d/%d, %02d:%02d\n",day,month,year,hours,mins);
 
     char command[16];
     char input[16];
@@ -89,7 +103,7 @@ int main() {
         }
     }
 
-    return 0;
+    //return 0;
 
 }
 

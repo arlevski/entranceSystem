@@ -1,0 +1,24 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/odedarlevski/Documents/GitHub/entranceSystem/Source.c
+stdio.h
+-
+time.h
+-
+
+/Users/odedarlevski/Documents/GitHub/entranceSystem/main.c
+stdio.h
+-
+stdlib.h
+-
+string.h
+-
+Source.c
+/Users/odedarlevski/Documents/GitHub/entranceSystem/Source.c
+
